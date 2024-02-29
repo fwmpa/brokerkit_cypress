@@ -1,4 +1,4 @@
-import { users } from "../../fixtures/user.json";
+import { users } from "../fixtures/user.json";
 
 describe("Product Navigation", () => {
   beforeEach(() => {
