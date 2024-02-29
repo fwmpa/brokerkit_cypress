@@ -6,8 +6,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          node-version: 20.x
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+          node-version: 20.x
       # after the test run completes
       # store videos and any screenshots
       # NOTE: screenshots will be generated only if E2E test failed
