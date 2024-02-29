@@ -4,11 +4,11 @@ describe("Product Navigation", () => {
   beforeEach(() => {
     // Data setup and login
     const { username, password } = users.standard_user;
-    cy.visit("https://www.saucedemo.com/");
+    cy.visit("/");
     cy.login(username, password);
   });
 
-  it("navigates to each product detail page correctly", () => {
+  it("Sorts product from highest to lowest price", () => {
     // Directly select "Price (high to low)" option
     cy.get('[data-test="product_sort_container"]').select("hilo");
 
