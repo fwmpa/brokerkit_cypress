@@ -9,7 +9,7 @@ describe("Product Navigation", () => {
   });
 
   it("Sorts product from highest to lowest price", () => {
-    // Directly select "Price (high to low)" option
+    // Select "Price (high to low)" option
     cy.get('[data-test="product_sort_container"]').select("hilo");
 
     // Assert the option "Price (high to low)" exists directly
