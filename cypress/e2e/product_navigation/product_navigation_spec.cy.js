@@ -8,19 +8,18 @@ describe("Product Navigation", () => {
     cy.login(username, password);
   });
   it("navigates to each product detail page correctly", () => {
-    // Collect all product names and navigate to their details page
-    // Because the ids value text changes only the number in the middle,
-    // I built a locator that will look for elemnts ids that starts with "item" and finishes with "title_link"
-    cy.get('a[id^="item"][id$="title_link"]').then(($links) => {
-      const productNames = $links
+    // Collect all product names and navigate to their details page using link element
+    cy.get('a[id^="item"][id$="title_link"]').then(($el) => {
+      const products = $el
         .toArray()
         .map((link) => Cypress.$(link).find(".inventory_item_name").text());
 
-      // Asserts that user landed on correct product page
-      productNames.forEach((name) => {
+      products.forEach((name) => {
         cy.contains(".inventory_item_name", name).click();
+
+        // Asserts that user landed on correct product page
         cy.get(".inventory_details_name").should("have.text", name);
-        cy.go("back");
+        cy.get('[data-test="back-to-products"]').click();
       });
     });
   });
