@@ -1,6 +1,9 @@
 {
   "users": {
     "standard_user": {
+      "first_name": "john",
+      "last_name": "doe",
+      "postal_code": "12345",
       "username": "standard_user",
       "password": "secret_sauce"
     }

@@ -4,7 +4,7 @@ describe("Product Navigation", () => {
   beforeEach(() => {
     // Data setup and login
     const { username, password } = users.standard_user;
-    cy.visit("https://www.saucedemo.com/");
+    cy.visit("/");
     cy.login(username, password);
   });
 
